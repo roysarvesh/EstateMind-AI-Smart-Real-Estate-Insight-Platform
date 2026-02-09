@@ -1,254 +1,172 @@
-<<<<<<< HEAD
-# RealtyAI - Smart Real Estate Insight Platform
+EstateMind AI – Smart Real Estate Insight Platform
 
-A comprehensive AI-powered real estate analytics platform that provides price predictions and time series forecasting for various regions using Machine Learning and Prophet models.
+A comprehensive AI-powered real estate analytics platform that provides price prediction and time series market forecasting across regions using Machine Learning and Prophet models.
+Built with FastAPI, React, scikit-learn, and Prophet, the platform combines predictive modeling with intuitive visual dashboards.
 
-## Table of Contents
+📌 Features
+🏡 Price Prediction
 
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Project Structure](#project-structure)
-- [Prerequisites](#prerequisites)
-- [Installation & Setup](#installation--setup)
-- [Running the Application](#running-the-application)
-- [Models](#models)
-- [License](#license)
+Predict real estate prices based on:
 
-## Features
+Location
 
-### Price Prediction
-- Predict real estate prices based on property features
-- Input parameters: Location, City, BHK, Total Area, Price per SQFT, Bathrooms, Balcony
-- Uses BaggingRegressor ML pipeline for accurate predictions
+City
 
-### Time Series Forecasting
-- Single Region Forecast: Detailed forecast with confidence intervals for one region
-- Multi-Region Comparison: Compare forecasts across multiple regions
-- Region Statistics: Historical data analysis and market insights
-- Forecast horizon: 1-36 months
-- Prophet-based forecasting models
+BHK
 
-### Visualization
-- Interactive charts with Recharts
-- Historical data vs. forecast comparison
-- Confidence interval visualization
-- Responsive design for all devices
+Total Area
 
-## Technology Stack
+Price per SQFT
 
-### Backend
-- Framework: FastAPI 0.104.0+
-- ML Libraries: 
-  - scikit-learn 1.7.1
-  - Prophet 1.1.0+
-  - pandas 2.0.0+
-  - numpy 1.24.0+
-- Model Serialization: joblib 1.3.0+
-- Server: Uvicorn (with standard extras)
+Bathrooms
 
-### Frontend
-- Framework: React 18
-- Charts: Recharts
-- Icons: React Icons (Font Awesome)
-- HTTP Client: Fetch API
-- Build Tool: Create React App
+Balcony
 
-### Package Management
-- Backend: uv (Astral's fast Python package installer)
-- Frontend: npm/yarn
+Model: BaggingRegressor (Decision Tree base estimators)
+File: real_estate_pipeline_v20250915_182141.joblib
 
-## Project Structure
+📈 Time Series Forecasting
 
-```
-RealtyAI_Infosys_Internship_Aug2025/
+Single Region Market Forecast
+
+Multi-Region Forecast Comparison
+
+Historical Trend Analysis & Market Insights
+
+Confidence Interval Visualization
+
+Forecast Horizon: 1–36 months
+Model: Prophet
+File: all_region_models.joblib
+
+🎨 Visualization
+
+Interactive charts (Recharts)
+
+Forecast vs. Actual graphs
+
+Confidence intervals
+
+Mobile-friendly responsive UI
+
+🛠 Technology Stack
+Backend
+
+FastAPI (0.104+)
+
+scikit-learn (1.7.1)
+
+Prophet (1.1.0+)
+
+pandas, numpy, joblib
+
+uv (Python package manager)
+
+Server: Uvicorn
+
+Frontend
+
+React 18
+
+Recharts
+
+React Icons
+
+Fetch API
+
+Create React App
+
+📂 Project Structure
+EstateMind-AI-Smart-Real-Estate-Insight-Platform/
 │
 ├── backend/
-│   ├── main.py                    # FastAPI application
-│   ├── feature_engineering.py     # Feature engineering transformer
-│   ├── pyproject.toml            # uv dependencies
-│   └── README.md                 # Backend documentation
+│   ├── main.py
+│   ├── feature_engineering.py
+│   ├── pyproject.toml
+│   └── README.md
 │
 ├── frontend/
 │   ├── public/
-│   │   ├── index.html
-│   │   └── manifest.json
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── PriceForecasting.js   # Time series forecasting UI
-│   │   │   └── PricePrediction.js    # Price prediction UI
+│   │   │   ├── PriceForecasting.js
+│   │   │   └── PricePrediction.js
 │   │   ├── App.js
-│   │   ├── App.css
-│   │   ├── index.js
-│   │   └── index.css
-│   ├── package.json
-│   └── README.md
+│   │   └── index.js
+│   └── package.json
 │
 ├── Models/
-│   ├── real_estate_pipeline_v20250915_182141.joblib   # Price prediction model
-│   └── all_region_models.joblib                        # Prophet time series models
+│   ├── real_estate_pipeline.joblib
+│   └── all_region_models.joblib
 │
 ├── Notebooks/
-│   ├── RealEstate_Feature_Engineering_and_training.ipynb
-│   ├── Time_Series_Fore_Casting.ipynb
-│   ├── EDA_price_prediction.ipynb
-│   └── ... (other analysis notebooks)
+│   ├── Feature Engineering & Training
+│   ├── Time Series Forecasting
+│   ├── EDA Notebooks
 │
-├── AI Project_ RealtyAI Smart Real Estate Insight Platform.pdf
 ├── LICENSE
-└── README.md                      # This file
-```
+└── README.md
 
-## Prerequisites
+🚀 Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/roysarvesh/EstateMind-AI-Smart-Real-Estate-Insight-Platform.git
+cd EstateMind-AI-Smart-Real-Estate-Insight-Platform
 
-Before you begin, ensure you have the following installed:
+🖥 Backend Setup
+Install uv
 
-### System Requirements
-- Operating System: Windows 10/11, macOS, or Linux
-- Python: 3.10 or higher (required for scikit-learn 1.7.1)
-- Node.js: 16.x or higher
-- npm: 8.x or higher (comes with Node.js)
+Windows:
 
-### Package Managers
-- uv: Fast Python package installer ([Installation Guide](https://github.com/astral-sh/uv))
-- npm/yarn: For frontend dependencies
-
-## Installation & Setup
-
-### Step 1: Clone the Repository
-
-```bash
-cd d:\dev\test\internship
-git clone https://github.com/AabidMK/RealtyAI_Infosys_Internship_Aug2025.git
-cd RealtyAI_Infosys_Internship_Aug2025
-```
-
-### Step 2: Backend Setup
-
-#### 2.1 Install uv (Python Package Manager)
-
-**For Windows:**
-```powershell
-# Download and run the installer
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
 
-**For macOS/Linux:**
-```bash
+
+macOS/Linux:
+
 curl -LsSf https://astral.sh/uv/install.sh | sh
-```
 
-Verify installation:
-```bash
-uv --version
-```
-
-#### 2.2 Install Backend Dependencies
-
-```bash
+Install Dependencies
 cd backend
 uv sync
-```
 
-This will install all required packages from `pyproject.toml`:
-- FastAPI
-- Uvicorn with standard extras
-- scikit-learn 1.7.1 (exact version for model compatibility)
-- Prophet
-- pandas, numpy, joblib, pydantic
-
-#### 2.3 Verify Model Files
-
-Ensure the following model files exist in the `Models/` directory:
-```
-Models/
-├── real_estate_pipeline_v20250915_182141.joblib
-└── all_region_models.joblib
-```
-
-If missing, download from the project repository or train new models using the provided notebooks.
-
-### Step 3: Frontend Setup
-
-#### 3.1 Navigate to Frontend Directory
-
-```bash
-cd ../frontend
-```
-
-#### 3.2 Install Node Dependencies
-
-```bash
-npm install
-```
-
-This will install:
-- React and React-DOM
-- Recharts
-- React Icons
-- Other development dependencies
-
-## Running the Application
-
-### Start Backend Server
-
-Open a terminal and run:
-
-```bash
-cd backend
+Run Backend
 uv run uvicorn main:app --reload --host 127.0.0.1 --port 8000
-```
 
-**Expected Output:**
-```
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process
-INFO:     Started server process
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-```
-
-Backend will be available at: **http://127.0.0.1:8000**
-
-### Start Frontend Development Server
-
-Open a **new terminal** and run:
-
-```bash
+🌐 Frontend Setup
 cd frontend
+npm install
 npm start
-```
 
-**Expected Output:**
-```
-Compiled successfully!
 
-You can now view frontend in the browser.
+Frontend URL:
 
-  Local:            http://localhost:3000
-  On Your Network:  http://192.168.x.x:3000
-```
+http://localhost:3000
 
-Frontend will be available at: **http://localhost:3000**
 
-## Models
+Backend URL:
 
-### Price Prediction Model
-- Algorithm: BaggingRegressor with Decision Tree base estimators
-- Features: Location, City, BHK, Total_Area, Price_per_SQFT, Bathroom, Balcony
-- Training Data: Real estate listings from multiple Indian cities
-- File: `real_estate_pipeline_v20250915_182141.joblib`
+http://127.0.0.1:8000
 
-### Time Series Forecasting Models
-- Algorithm: Facebook Prophet
-- Regions: 50+ US states/regions
-- Training Period: 1996-2018 (historical ZHVI data)
-- Forecast Capability: Up to 36 months ahead
-- File: `all_region_models.joblib`
+📊 Models
+Price Prediction Model
 
-## License
+BaggingRegressor
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-=======
-# EstateMind-AI-Smart-Real-Estate-Insight-Platform
-A comprehensive AI-powered real estate analytics platform that provides price predictions and time series forecasting for various regions using Machine Learning and Prophet models.
->>>>>>> c56eab9c1e57db0810dfbd34605666fc463dc9f8
+Features: Location, City, BHK, Area, Price/SQFT, Bathrooms, Balcony
+
+File: real_estate_pipeline_v20250915_182141.joblib
+
+Prophet Time Series Models
+
+50+ US regions
+
+Forecast horizon: 36 months
+
+File: all_region_models.joblib
+
+📄 License
+
+This project is licensed under the MIT License.
+
+👌 README is ready.
+
+Now follow these steps to fix your Git conflict:
