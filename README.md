@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RealtyAI - Smart Real Estate Insight Platform
 
 A comprehensive AI-powered real estate analytics platform that provides price predictions and time series forecasting for various regions using Machine Learning and Prophet models.
@@ -247,3 +248,7 @@ Frontend will be available at: **http://localhost:3000**
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+=======
+# EstateMind-AI-Smart-Real-Estate-Insight-Platform
+A comprehensive AI-powered real estate analytics platform that provides price predictions and time series forecasting for various regions using Machine Learning and Prophet models.
+>>>>>>> c56eab9c1e57db0810dfbd34605666fc463dc9f8
