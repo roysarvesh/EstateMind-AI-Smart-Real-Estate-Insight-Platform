@@ -166,7 +166,3 @@ File: all_region_models.joblib
 📄 License
 
 This project is licensed under the MIT License.
-
-👌 README is ready.
-
-Now follow these steps to fix your Git conflict:
